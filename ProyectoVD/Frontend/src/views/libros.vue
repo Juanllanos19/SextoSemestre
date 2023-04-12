@@ -15,16 +15,19 @@
         }
     ])
 </script>
+
 <template>
-  <main>
-    <h1>Libros</h1>
-    <div v-for="(item,i) in data " v-bind:key="i" class="card" style="width: 18rem;">
-        <img :src="item.portada" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{ item.titulo }}</h5>
-            <p class="card-text">{{ item.num_pag }}</p>
-            <a href="#" class="btn btn-primary">{{item.autor}}</a>
+  <div class="container">
+    <main>
+        <h1>Libros</h1>
+        <div v-for="(item,i) in data " v-bind:key="i" class="card" style="width: 18rem;">
+            <img :src="item.portada" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.titulo }}</h5>
+                <p class="card-text">{{ item.num_pag }}</p>
+                <a href="#" class="btn btn-primary">{{item.autor}}</a>
+            </div>
         </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
