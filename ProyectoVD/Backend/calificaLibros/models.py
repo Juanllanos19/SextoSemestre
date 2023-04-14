@@ -7,12 +7,12 @@ class Autor(models.Model):
     apellido =models.CharField(max_length=150)
     fecha_nacimiento =models.DateField()
     def _str_(self):
-        return self.nombree + ' ' + self.apellido
+        return self.nombre + ' ' + self.apellido
     
 class Genero(models.Model):
     nombre = models.CharField(max_length=100)
     def _str_(self):
-            return self.nombre 
+         return self.nombre 
     
 class Usuario(models.Model):
      correo = models.EmailField()
