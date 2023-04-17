@@ -17,7 +17,7 @@ class Genero(models.Model):
 class Usuario(models.Model):
      correo = models.EmailField()
      contrasena = models.CharField(max_length=500)
-     def __str__(self) :
+     def _str_(self) :
           return self.correo
      
 class Libro(models.Model):
