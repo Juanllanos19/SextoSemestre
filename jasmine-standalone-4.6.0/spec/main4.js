@@ -1,5 +1,5 @@
 // Test Suite
-describe(`${User.name} Class`, () => {
+describe('${User.name} Class', () => {
     let model;
 
     beforeEach(() => {
@@ -7,13 +7,32 @@ describe(`${User.name} Class`, () => {
     });
     describe('default values', () => {
         it('first name defaults to empty', () => {
+            //assert
             expect(model.firstName).toBe('');
         });
         it('last name defaults to empty', () => {
+            //assert
             expect(model.lastName).toBe('');
         });
         it('middle name defaults to empty', () => {
+            //assert
             expect(model.middleName).toBe('');
         });
+    });
+    describe('full name', () => {
+        beforeEach(() => {
+            model = new User({firstName: 'Dylan', lastName: 'Israel'});
+        });
+
+        it('middle initial when middleName is defined with first and last', () => {
+          //arrange
+          model.middleName = 'Christopher';
+          
+          //act
+          const result = model.fullName;
+
+          //assert
+          expect(result).toBe(`${model.firstName} ${model.lastName}`);
+        })
     });
 });
