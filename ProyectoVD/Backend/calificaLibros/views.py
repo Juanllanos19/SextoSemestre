@@ -1,11 +1,15 @@
 from django.http import HttpResponse
 from rest_framework.viewsets import ModelViewSet
 from .models import Libro, Autor, Genero, Usuario, Calificacion
-from .serializers import LibroSerializer, AutorSerializer, GeneroSerializer, UsuarioSerializer, CalificacionSerializer
+from .serializers import LibroSerializer, AutorSerializer, GeneroSerializer, UsuarioSerializer, CalificacionSerializer, LibrosGetSerializer
 
 class LibrosViewSet(ModelViewSet):
     queryset = Libro.objects.all()
-    serializer_class = LibroSerializer
+    #serializer_class = LibroSerializer
+    def get_serializer(self):
+        if self.request.method in ['GET']:
+            return LibrosGetSerializer
+        return LibroSerializer
 
 class AutoresViewSet(ModelViewSet):
     queryset = Autor.objects.all()

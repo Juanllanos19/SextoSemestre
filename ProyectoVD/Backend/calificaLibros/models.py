@@ -23,7 +23,7 @@ class Usuario(models.Model):
 class Libro(models.Model):
      titulo = models.CharField(max_length=200)
      sinopsis = models.TextField()
-     portada = models.FileField(upload_to='calificalibros/portadas/')
+     portada = models.FileField()
      fecha_publicacion = models.DateField('Fecha de publicación')
      num_pag = models.IntegerField('número de páginas', default=0)
      genero = models.ForeignKey(Genero, on_delete=models.CASCADE)

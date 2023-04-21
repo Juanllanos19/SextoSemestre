@@ -6,6 +6,7 @@ class LibroSerializer(ModelSerializer):
             model = Libro
             fields = ALL_FIELDS #['id', 'titulo']
 
+
 class AutorSerializer(ModelSerializer):
       class Meta:
             model = Autor
@@ -25,3 +26,11 @@ class CalificacionSerializer(ModelSerializer):
       class Meta:
             model = Calificacion
             fields = ALL_FIELDS #['id', 'titulo']
+
+class LibrosGetSerializer(ModelSerializer):
+      genero = GeneroSerializer()
+      autores = AutorSerializer(many = True)
+      calificaciones = CalificacionSerializer(many = True, source = 'calificaciones', required =False)
+      class Meta:
+            model = Libro
+            fields = ALL_FIELDS
