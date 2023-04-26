@@ -34,7 +34,7 @@
             <img :src="item.portada" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ item.titulo }}</h5>
-                <p class="card-text">{{ item.num_pag }}</p>
+                <p class="card-text">{{ item.fecha_publicacion }}</p>
                 <p href="#" class="btn btn-primary">{{item.autores[0].nombre + " " + item.autores[0].apellido}} - Pags. {{ item.num_pag }}</p>
             </div>
         </div>
