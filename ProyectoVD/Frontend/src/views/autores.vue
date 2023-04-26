@@ -19,7 +19,7 @@
 <template>
   <div class="container">
     <main>
-        <h1>Libros</h1>
+        <h1>Autores</h1>
         <div v-for="(item,i) in data " v-bind:key="i" class="card" style="width: 18rem;">
             <img :src="item.portada" class="card-img-top" alt="...">
             <div class="card-body">
