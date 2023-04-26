@@ -30,7 +30,7 @@ class CalificacionSerializer(ModelSerializer):
 class LibrosGetSerializer(ModelSerializer):
       genero = GeneroSerializer()
       autores = AutorSerializer(many = True)
-      calificaciones = CalificacionSerializer(many = True, source = 'calificaciones', required =False)
+      calificaciones = CalificacionSerializer(many = True, required =False)
       class Meta:
             model = Libro
             fields = ALL_FIELDS

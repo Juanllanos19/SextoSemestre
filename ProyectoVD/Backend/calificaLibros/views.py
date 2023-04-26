@@ -6,7 +6,7 @@ from .serializers import LibroSerializer, AutorSerializer, GeneroSerializer, Usu
 class LibrosViewSet(ModelViewSet):
     queryset = Libro.objects.all()
     #serializer_class = LibroSerializer
-    def get_serializer(self):
+    def get_serializer_class(self):
         if self.request.method in ['GET']:
             return LibrosGetSerializer
         return LibroSerializer

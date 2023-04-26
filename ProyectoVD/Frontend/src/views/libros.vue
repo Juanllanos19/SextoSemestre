@@ -2,7 +2,17 @@
     import {onMounted, ref} from 'vue'
     import axios from 'axios'
 
-   const data = ref();
+   const data = ref([{
+    id: "",
+    titulo: "",
+    sinopsis: "",
+    portada: "",
+    fecha_publicacion: "",
+    num_pag: "",
+    genero: "",
+    autores: "",
+    calificacion: "",
+   }])
 
    onMounted(
     axios.get('http://localhost:8000/api/libros')
@@ -25,7 +35,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ item.titulo }}</h5>
                 <p class="card-text">{{ item.num_pag }}</p>
-                <a href="#" class="btn btn-primary">{{item.autores[0]}} - Pags. {{ item.num_pag }}</a>
+                <p href="#" class="btn btn-primary">{{item.autores[0].nombre + " " + item.autores[0].apellido}} - Pags. {{ item.num_pag }}</p>
             </div>
         </div>
     </main>

@@ -8,7 +8,7 @@ class Autor(models.Model):
     fecha_nacimiento =models.DateField()
     def _str_(self):
         return self.nombre + ' ' + self.apellido
-    
+  
 class Genero(models.Model):
     nombre = models.CharField(max_length=100)
     def _str_(self):
@@ -19,7 +19,7 @@ class Usuario(models.Model):
      contrasena = models.CharField(max_length=500)
      def _str_(self) :
           return self.correo
-     
+    
 class Libro(models.Model):
      titulo = models.CharField(max_length=200)
      sinopsis = models.TextField()
