@@ -15,6 +15,7 @@ import { RouterLink, RouterView } from 'vue-router'
             <RouterLink to="/" class="nav-link">Inicio</RouterLink>
             <RouterLink to="/libros" class="nav-link">Libros</RouterLink>
             <RouterLink to="/autores" class="nav-link">Autores</RouterLink>
+            <RouterLink to="/nuevo_genero" class="nav-link">Nuevo Genero</RouterLink>
           </div>
         </div>
       </div>

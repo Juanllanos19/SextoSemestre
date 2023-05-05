@@ -30,6 +30,17 @@ const router = createRouter({
       name: 'libro',
       props: true,
       component: () => import('../views/LibroView.vue')
+    },
+    {
+      path: '/nuevo_genero',
+      name: 'nuevo_genero',
+      component: () => import('../views/AgregaGeneroView.vue')
+    },
+    {
+      path: '/editar_libro/:id',
+      name: 'editar_libro',
+      props: true,
+      component: () => import('../views/EditaLibroView.vue')
     }
   ]
 })
