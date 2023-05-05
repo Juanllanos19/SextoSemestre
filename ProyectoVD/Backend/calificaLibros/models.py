@@ -21,17 +21,17 @@ class Usuario(models.Model):
           return self.correo
     
 class Libro(models.Model):
-     titulo = models.CharField(max_length=200)
-     sinopsis = models.TextField()
-     portada = models.FileField()
-     fecha_publicacion = models.DateField('Fecha de publicación')
-     num_pag = models.IntegerField('número de páginas', default=0)
+     titulo = models.CharField(max_length=200, blank=True)
+     sinopsis = models.TextField(blank=True)
+     portada = models.FileField(blank=True)
+     fecha_publicacion = models.DateField('Fecha de publicación', blank= True)
+     num_pag = models.IntegerField('número de páginas', default=0, blank= True)
      genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
      autores = models.ManyToManyField(Autor)
      calificacion = models.ManyToManyField(Usuario, through='Calificacion')
      def __str__(self):
           return self.titulo
-     
+   
 class Calificacion(models.Model):
      usuarios = models.ForeignKey(Usuario, on_delete=models.CASCADE)
      libro = models.ForeignKey(Libro, on_delete=models.CASCADE, related_name='calificaciones')
